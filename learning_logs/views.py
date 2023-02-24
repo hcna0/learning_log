@@ -8,7 +8,11 @@ def index(request):
     return render(request, 'learning_logs/index.html')
 
 def greet(request, name):
-    return HttpResponse(f"Hello, {name.capitalize()}.")
+    """Return Homepage matching url ending"""
+    # return HttpResponse(f"Hello, {name.capitalize()}.")
+    return render(request, 'learning_logs/greet.html', {
+        "name": name.capitalize()
+    })
 
 def double(request):
     return HttpResponse("Hello Hello to you double two.")
