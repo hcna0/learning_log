@@ -7,9 +7,8 @@ def index(request):
     return HttpResponse("Hello, Visitor. Welcome to Learning Log.")
     # return render(request, 'learning_logs/index.html')
 
-def single(request):
-    return HttpResponse("Hello, single one.")
+def greet(request, name):
+    return HttpResponse(f"Hello, {name.capitalize()}.")
 
 def double(request):
     return HttpResponse("Hello Hello to you double two.")
-    
