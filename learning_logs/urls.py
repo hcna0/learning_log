@@ -10,4 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path("<str:name>", views.greet, name="greet"),
     path("double", views.double, name="double"),
+
+    # Page that shows topics
+    path('topics/', views.topics, name='topics'),
 ]

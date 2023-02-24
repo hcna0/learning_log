@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
     <head>
         <title>Learning Log</title>
     </head>
@@ -7,4 +8,5 @@
         <h1>Hello, {{ name }}. Welcome to Learning Log.</h1>
         <p>Learning Log helps you keep track of your learning, for any topic you're learning about.</p>
     </body>
-</html> 
+
+{% endblock content %}

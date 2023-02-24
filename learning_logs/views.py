@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Topic
 
 # Create your views here.
 def index(request):
@@ -16,3 +17,10 @@ def greet(request, name):
 
 def double(request):
     return HttpResponse("Hello Hello to you double two.")
+
+
+def topics(request):
+    """Shows all Topics"""
+    topics = Topic.objects.order_by('date_added')
+    context = {'topics' : topics}
+    return render(request, 'learning_logs/topics.html', context)
