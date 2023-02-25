@@ -2,6 +2,7 @@
 
 {% block content %}
     <p>Topics</p>
+    <a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
 
     <ul>
         {% for topic in topics %}
@@ -12,4 +13,6 @@
             <li>No topics have been added yet.</li>
         {% endfor %}
     </ul>
+
+
 {% endblock content %}
