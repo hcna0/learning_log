@@ -1,15 +1,20 @@
 {% extends 'Learning_logs/base.html' %}
 
-{% block content %}
-    {% if form.errors %}
-        <p>Your username and password did not match. Please try again.</p>
-    {% endif %}
+{% block page_header %}
+    <h2>Log in to your account.</h2>
+{% endblock page_header %}
 
-    <form method="post" action="{% url 'users:login' %}">
+{% block content %}
+    {% comment %} {% if form.errors %}
+        <p>Your username and password did not match. Please try again.</p>
+    {% endif %} {% endcomment %}
+
+    <form method="post" action="{% url 'users:login' %}" class="form">
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button name='submit'>log in</button>
+        <button name='submit' class="btn btn-primary">Log in</button>
+
         <input type="hidden" name="next"
             value="{% url 'learning_logs:index' %}" />
     </form>
